@@ -1,0 +1,13 @@
+{
+  // Cloudflare Workers 静态资源部署配置
+  // - name：Worker 名称（也决定 <name>.<account>.workers.dev 访问域名）
+  // - assets.directory：静态产物目录，由 `npm run build` 生成
+  // - not_found_handling：未匹配路径返回 404.html（保持与静态站一致的 404 行为）
+  // 部署：`npx wrangler deploy`（CI 中由 cloudflare/wrangler-action 执行）
+  "name": "menav-cf",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+  },
+}
